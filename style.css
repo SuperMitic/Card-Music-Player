@@ -1,0 +1,123 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#card-box{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("cover/0.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.volume-slider {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease, width 0.7s ease;
+}
+
+.volume-control-container:hover .volume-slider {
+    width: 100%;
+    opacity: 0.7;
+}
+
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#album-cover{
+    position: relative;     
+    margin-left: 9%;
+    animation-play-state: paused;
+}
+
+.spin{
+    animation: spin 6s linear infinite;
+    -webkit-animation:spin 6s linear infinite;
+    -moz-animation:spin 6s linear infinite;      
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+.progress-area .song-timer, .controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress-area{
+    margin-top: 10%;
+    height: 6px;
+    width: 100%;
+    border-radius: 50px;
+    background: #f0f0f081;
+    cursor: pointer;
+}
+.progress-area .progress-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: #ffffff;
+}
+
+.progress-area .song-timer{
+    margin-top: 2px;
+    }
+
+.song-timer span{
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.controls{
+    margin: 40px 0 5px 0;
+}
+
+.controls i{
+    user-select: none;
+    color: white;
+}
+
+.controls #prev{
+margin-right: -13px;
+font-size: 36px;    
+}
+
+.controls #next{
+margin-left: -13px;
+font-size: 36px;
+}
+
+.controls .play-pause{
+    height: 54px;
+    width: 54px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #f0ecec;
+}
+.play-pause::before{
+    position: absolute;
+    content: "";
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background: transparent;
+    border: 3px solid #ffffff;
+}
+
+.prev , .next {
+    box-shadow: 
+        0px 0px 15px #f0ecec;
+    border-radius: 50%;
+}
